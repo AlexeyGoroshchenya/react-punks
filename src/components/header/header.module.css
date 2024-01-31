@@ -1,0 +1,117 @@
+.body{
+    position: absolute;
+    z-index: 2;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.875rem 0;
+    color: var(--black);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.logo{
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    
+    position: relative;
+    padding-left: 3rem;
+    position: relative;
+}
+
+.logo::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2.375rem;
+    width: 2.125rem;
+    background-image: url('/public/icons/logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contacts{
+    display: flex;
+    gap: 1.875rem;
+}
+
+.contacts a{
+    margin: auto;
+    transition-duration: var(--hover-duration);
+}
+
+.contacts a:hover{
+    transform: scale(1.15);
+    -webkit-transform: scale(1.15);
+    -moz-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    -o-transform: scale(1.15);
+}
+
+.button{
+    padding: 1rem 1.875rem 1rem 4rem;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+    
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    transition-duration: var(--hover-duration);
+}
+
+.button_1{
+    background: linear-gradient(91.67deg, #6B4141 2.86%, var(--coral) 99.97%);
+}
+.button_2{
+    background: linear-gradient(93.92deg, #36432D 0%, var(--green) 100%);
+}
+.button_3{
+    background: linear-gradient(93.92deg, #432D43 0%, var(--purple) 100%);
+}
+
+.button:hover{
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}
+
+.button a{
+    text-decoration: none;
+    color: inherit;
+    text-shadow: 1px 2px  #00000080;
+    position: relative;
+}
+.button a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    transform: translateY(-4px);
+    left:  -2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url('/public/icons/Wallet.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-transform: translateY(-4px);
+    -moz-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
+    -o-transform: translateY(-4px);
+}

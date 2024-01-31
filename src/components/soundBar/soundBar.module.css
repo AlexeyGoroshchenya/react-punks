@@ -1,0 +1,32 @@
+.body{
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    margin-bottom: 3rem;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    z-index: 1;
+}
+
+.button{
+color: white;
+width: 60px;
+height: 60px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+cursor: pointer;
+transition-duration: var(--hover-duration);
+}
+
+.button:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
