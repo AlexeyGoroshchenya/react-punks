@@ -1,49 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import './Main.css';
 
 import noSignal from './backgrounds/noSignal.mp4'
 import VHS from './backgrounds/VHS.mp4'
+
+
 
 import { useIdleTimer } from 'react-idle-timer/legacy'
 
 import Header from '../header/header';
 import IdleContent from '../IdleContent';
 import ActivityContent from '../ActivityContent';
+import Audio from '../Audio/Audio';
 
 
 
 const Main = () => {
 
-
-
+    const audioRef = useRef()
+    let timer_1Ref = useRef()
+    let timer_2Ref = useRef()
 
     const [stage, setStage] = useState(1)
-    const [sound, setSound] = useState(true)
+    const [sound, setSound] = useState(false)
     const [idleStage, setIdleStage] = useState(1)
     const [activity, setActivity] = useState(true)
 
-    const timeout = 5000 + 3000*Math.random()
-
-    const onIdle = () => {
-        setActivity(false)
-        
-        setTimeout(()=>{
-            setIdleStage(2)
-            
-            setTimeout(()=>{
-                changeSlide(stage + 1)
-            setActivity(true)
-            setIdleStage(1)
-            
-        }, timeout)
-        }, timeout)
-    }
-
-    const onActive = () => {
-        setActivity(true)
-        setIdleStage(1)
-    }
-
+    const timeout = 3000 + 3000*Math.random()
 
     const changeSlide = (num) => {
         if (num < stage) {
@@ -57,15 +40,54 @@ const Main = () => {
         }
     }
 
-    useIdleTimer({
+    const idleFinish = ()=>{
+            changeSlide(stage + 1)
+            setActivity(true)
+            setIdleStage(1)
+            clearTimeout(timer_1Ref.current)
+            clearTimeout(timer_2Ref.current)
+            activate()
+    }
+
+    const onIdle = useCallback(() => {
+        setActivity(false)
+        
+
+        timer_1Ref.current = setTimeout(()=>{
+            setIdleStage(2)
+        }, timeout)
+
+            timer_2Ref.current = setTimeout(()=>{
+                idleFinish()
+            }, timeout*2)
+
+    })
+
+    //if you need to let the user interrupt the animation and return to the slides,
+    // this is included here. more details about the library here https://idletimer.dev/docs/api/methods
+    // const onActive = useCallback(() => {
+        // idleFinish()
+    // })
+    
+    const {activate} = useIdleTimer({
             onIdle,
-            onActive,
-            timeout: 3000,
+            // onActive,
+            timeout: 6000,
             throttle: 500,
+            startOnMount: true,
       })
 
 
+    useEffect(()=>{
 
+        if(sound) {
+            audioRef.current.play()
+        } else{
+            audioRef.current.pause()
+        }
+
+
+    }, [sound, stage, idleStage, activity])
 
 
     return (
@@ -80,10 +102,12 @@ const Main = () => {
             {activity?
             <ActivityContent sound={sound} setSound={setSound} stage={stage} changeSlide={changeSlide}/>
             :
-            <IdleContent stage={stage} idleStage={idleStage} videoSrc={VHS}/>
+            <IdleContent stage={stage} idleStage={idleStage} videoSrc={noSignal}/>
             }
-            
 
+           <Audio activity={activity} stage={stage} idleStage={idleStage} audioRef={audioRef}/>
+            
+            
 
         </div>
     );

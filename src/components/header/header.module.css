@@ -15,6 +15,21 @@
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
+    gap: 20px;
+}
+
+@media (max-width: 991.98px) {
+    .body{
+        width: 90%;
+    } 
+}
+
+@media (max-width: 767.98px) {
+    .body{
+        padding: 0.5rem 0;
+        flex-direction: column
+        
+    }
 }
 
 .logo{
@@ -25,6 +40,13 @@
     position: relative;
     padding-left: 3rem;
     position: relative;
+}
+
+@media (max-width: 767.98px) {
+    .logo{
+        font-size: 1.5rem;
+        align-self: flex-start;
+    }
 }
 
 .logo::before{
@@ -38,6 +60,12 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+@media (max-width: 767.98px) {
+    .logo::before{
+        top: -5px;
+    }
 }
 
 .contacts{
@@ -72,6 +100,13 @@
     font-size: 0.875rem;
     text-transform: uppercase;
     transition-duration: var(--hover-duration);
+}
+
+@media (max-width: 767.98px) {
+    .button{
+        padding: 1rem 3.875rem 1rem 6rem;
+        align-self: flex-end;
+    } 
 }
 
 .button_1{

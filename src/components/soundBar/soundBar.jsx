@@ -1,8 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import styles from './soundBar.module.css'
-import first from './sounds/first.m4a'
-import second from './sounds/second.m4a'
-import third from './sounds/third.m4a'
+
 
 
 const SoundBar = ({sound, setSound, stage}) => {
@@ -13,6 +11,10 @@ const SoundBar = ({sound, setSound, stage}) => {
 const changeSound = ()=>{
     setSound(!sound)
 }
+
+
+
+
 
     return (
         <div className={styles.body}>
@@ -31,6 +33,7 @@ const changeSound = ()=>{
             }
             >
             </div>
+            
         </div>
     );
 };

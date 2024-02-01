@@ -1,7 +1,16 @@
 .App{
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   position: relative;
+  overflow: hidden;
+}
+
+@media (any-hover: hover) and (max-height: 600px) {
+  .App{
+
+    height: 700px;
+    overflow-y: auto;
+  }
 }
 
 
