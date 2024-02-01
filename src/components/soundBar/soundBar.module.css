@@ -1,35 +1,26 @@
 .body{
-    position: absolute;
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
     display: flex;
-    
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    z-index: 1;
+    z-index: 2;
+    margin-bottom: 3rem;
 }
 
-@media only screen and (max-height: 600px) {
-    .body{
-        bottom: 2rem;
-        left: 20%;
-    }
-}
+
 
 @media (max-width: 991.98px) {
     .body{
-        bottom: 2rem;
-        left: 33%;
+        margin-bottom: 2rem;
     }
 }
 
-@media (max-width: 767.98px) {
-    .body{
 
-        left: 20%;
+
+@media (max-height: 650px)  {
+    .body{
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        margin-bottom: 0;
     }
 }
 

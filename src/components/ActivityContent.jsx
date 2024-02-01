@@ -1,11 +1,15 @@
 import React from 'react';
 import './main/Main.css';
-import SoundBar from './soundBar/soundBar';
+
+import Person1 from './main/backgrounds/Person-1.png'
+import Person2 from './main/backgrounds/Person-2.png'
 
 
-const ActivityContent = ({stage, sound, setSound, changeSlide}) => {
+const ActivityContent = ({stage, changeSlide}) => {
     return (
         <>
+            <div className='imagebox'><img src={stage !== 3 ? Person1 : Person2} alt="" /></div>
+
             <div className='titlebox'>
                 <div className='title'>
                     <p>
@@ -56,7 +60,7 @@ const ActivityContent = ({stage, sound, setSound, changeSlide}) => {
                 </div>
             </div>
 
-<SoundBar sound={sound} setSound={setSound} stage={stage} />
+
 
 
         </>

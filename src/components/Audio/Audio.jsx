@@ -16,7 +16,7 @@ const Audio = ({activity, stage, idleStage, audioRef}) => {
                 stage === 1 ? first: stage === 2 ? second : third
             }></audio>
             :
-            <audio ref={audioRef} preload="auto" src={
+            <audio ref={audioRef} preload="auto" loop src={
                 idleStage === 1 ? idleFirst : idleSecond
             }></audio>  
             }
