@@ -45,8 +45,6 @@ const Main = () => {
             changeSlide(num)
             setActivity(true)
             setIdleStage(1)
-            // clearTimeout(timer_1Ref.current)
-            // clearTimeout(timer_2Ref.current)
             activate()
     })
 
@@ -55,10 +53,6 @@ const Main = () => {
             setIdleStage(2)
             clearTimeout(timer_1Ref.current)
         }, timeout)
-
-            // timer_2Ref.current = setTimeout(()=>{
-            //     idleFinish()
-            // }, timeout*2)
     })
 
     const onIdle = () => {

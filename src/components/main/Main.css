@@ -110,7 +110,7 @@
     flex: 1 1 auto;
     width: 100%;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     padding: 20px;
     max-width: 1460px;
     gap: 100px;
@@ -123,6 +123,11 @@
     z-index: 2;
     flex: 0 1 30%;
     height: 50vmin;
+    transform: translateY(10%);
+    -webkit-transform: translateY(10%);
+    -moz-transform: translateY(10%);
+    -ms-transform: translateY(10%);
+    -o-transform: translateY(10%);
 }
 
 
@@ -298,10 +303,40 @@
     -o-transform: translateY(-3px);
 }
 
+@media (max-width: 991.98px) {
+    .prev-slide {
+        transform: translateY(5px);
+        -webkit-transform: translateY(5px);
+        -moz-transform: translateY(5px);
+        -ms-transform: translateY(5px);
+        -o-transform: translateY(5px);
+}
+.next-slide {
+    transform: rotate(180deg) translateY(-3px);
+    -webkit-transform: rotate(180deg) translateY(-3px);
+    -moz-transform: rotate(180deg) translateY(-3px);
+    -ms-transform: rotate(180deg) translateY(-3px);
+    -o-transform: rotate(180deg) translateY(-3px);
+}
+
+}
+
 @media (max-width: 767.98px) {
     .next-slide {
         align-self: flex-start;
-    }
+        transform: rotate(180deg) translateY(0px);
+        -webkit-transform: rotate(180deg) translateY(0px);
+        -moz-transform: rotate(180deg) translateY(0px);
+        -ms-transform: rotate(180deg) translateY(0px);
+        -o-transform: rotate(180deg) translateY(0px);
+}
+    .prev-slide {
+        transform: translateY(3px);
+        -webkit-transform: translateY(3px);
+        -moz-transform: translateY(3px);
+        -ms-transform: translateY(3px);
+        -o-transform: translateY(3px);
+}
 }
 
 .typewriter {
@@ -325,9 +360,21 @@
 
 .dots {
     display:inline-block;
-    clip-path: inset(0 40px 0 0);
-    animation: l 1s steps(4) infinite;
+    clip-path: inset(0 35px 0 0);
+    animation: l 1s steps(10) infinite;
     -webkit-animation: l 1s steps(10) infinite;
+}
+
+@media (max-width: 991.98px) {
+    .dots {
+        clip-path: inset(0 33px 0 0);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .dots {
+        clip-path: inset(0 25px 0 0);
+    }
 }
   
   @keyframes l {
@@ -390,7 +437,7 @@
 .noize {
     margin: 0 auto;
     text-align: center;
-    width: 70%;
+    width: 100%;
     color: #C4C4C4;
     font-size: 1rem;
     line-height: 1.5;
@@ -399,7 +446,7 @@
 
 @media (max-width: 991.98px) {
     .noize {
-        width: 100%;
+        width: 70%;
         padding-bottom: 15px;
     }
 }
