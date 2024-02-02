@@ -8,6 +8,8 @@ import Person2 from './main/backgrounds/Person-2.png'
 const ActivityContent = ({stage, changeSlide}) => {
     return (
         <>
+
+
             <div className='imagebox'><img src={stage !== 3 ? Person1 : Person2} alt="" /></div>
 
             <div className='titlebox'>
@@ -47,17 +49,7 @@ const ActivityContent = ({stage, changeSlide}) => {
                     </div>
 
                 </div>
-                <div className='escape'>
-                    <p>
-                        {stage === 1 ?
-                            <a href='#'>You</a>
-                            : stage === 2 ?
-                            <a href='#'>need</a>
-                            :
-                            <a href='#'>escape</a>}
-                    </p>
 
-                </div>
             </div>
 
 
