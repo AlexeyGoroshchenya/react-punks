@@ -27,7 +27,7 @@ const Main = () => {
     const [idleStage, setIdleStage] = useState(1)
     const [activity, setActivity] = useState(true)
 
-    const timeout = 60000 + 4000*Math.random()
+    const timeout = 6000 + 4000*Math.random()
 
     const changeSlide = (num) => {
         if (num < stage) {
