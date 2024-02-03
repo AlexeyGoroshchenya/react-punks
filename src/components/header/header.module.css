@@ -133,13 +133,13 @@
     -o-transform: scale(1.05);
 }
 
-.button a{
+.button p{
     text-decoration: none;
     color: inherit;
     text-shadow: 1px 2px  #00000080;
     position: relative;
 }
-.button a::before{
+.button p::before{
     content: '';
     position: absolute;
     top: 0;
