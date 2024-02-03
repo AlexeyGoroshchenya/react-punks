@@ -56,14 +56,14 @@ const Main = () => {
             }, 2000)
 
 
-    })
+    }, [])
 
     const goSecondIdleStages = useCallback(()=>{
             timer_1Ref.current = setTimeout(()=>{
                 setIdleStage(2)
                 clearTimeout(timer_1Ref.current)
             }, 2000 + 2000*Math.random())
-    })
+    }, [])
 
     const onIdle = () => {
         setActivity(false)
