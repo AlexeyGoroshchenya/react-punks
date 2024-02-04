@@ -25,10 +25,10 @@ const changeSound = ()=>{
                 changeSound()
             }}
             style={sound?{ 
-                backgroundImage: `url(${process.env.PUBLIC_URL}/icons/mute-${stage}.png)` 
+                backgroundImage: `url(${process.env.ASSET_PREFIX}/icons/mute-${stage}.png)` 
               }:
               { 
-                backgroundImage: `url(${process.env.PUBLIC_URL}/icons/unmute-${stage}.png)` 
+                backgroundImage: `url(${process.env.ASSET_PREFIX}/icons/unmute-${stage}.png)` 
               }
             }
             >

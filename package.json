@@ -10,17 +10,15 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-idle-timer": "^5.7.2",
-    "react-scripts": "5.0.1",
     "react-type-animation": "^3.2.0",
     "viem": "^1.21.4",
     "wagmi": "^1.4.13",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "rsbuild dev",
+    "build": "rsbuild build",
+    "preview": "rsbuild preview"
   },
   "eslintConfig": {
     "extends": [
@@ -41,11 +39,9 @@
     ]
   },
   "devDependencies": {
+    "@rsbuild/core": "^0.3.11",
+    "@rsbuild/plugin-react": "^0.3.11",
     "typescript": "^5.3.3"
-  },
-  "overrides": {
-    "react-scripts": {
-      "typescript": "^5"
-    }
   }
+
 }

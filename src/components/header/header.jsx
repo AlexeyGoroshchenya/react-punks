@@ -11,10 +11,10 @@ const Header = ({stage}) => {
             <div className={styles.container}>
                 <div className={stage===1?'coral ' + styles.logo:stage===2?'green ' + styles.logo:'purple ' + styles.logo}>BLASTPUNKS</div>
                 <div className={styles.contacts}>
-                    <a href="#"><img src={`${process.env.PUBLIC_URL}/icons/socials-1.svg`} alt="" /></a>
-                    <a href="#"><img src={`${process.env.PUBLIC_URL}/icons/socials-2.svg`} alt="" /></a>
-                    <a href="#"><img src={`${process.env.PUBLIC_URL}/icons/socials-3.svg`} alt="" /></a>
-                    <a href="#"><img src={`${process.env.PUBLIC_URL}/icons/socials-4.svg`} alt="" /></a>
+                    <a href="#"><img src={`${process.env.ASSET_PREFIX}/icons/socials-1.svg`} alt="" /></a>
+                    <a href="#"><img src={`${process.env.ASSET_PREFIX}/icons/socials-2.svg`} alt="" /></a>
+                    <a href="#"><img src={`${process.env.ASSET_PREFIX}/icons/socials-3.svg`} alt="" /></a>
+                    <a href="#"><img src={`${process.env.ASSET_PREFIX}/icons/socials-4.svg`} alt="" /></a>
                 </div>
                 <div 
                 onClick={() => open()}
