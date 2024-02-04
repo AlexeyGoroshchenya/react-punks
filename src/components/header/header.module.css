@@ -58,7 +58,7 @@
 .logo::before{
     content: '';
     position: absolute;
-    top: 0;
+    top: -5px;
     left: 0;
     height: 2.375rem;
     width: 2.125rem;
@@ -68,11 +68,7 @@
     background-size: cover;
 }
 
-@media (max-width: 767.98px) {
-    .logo::before{
-        top: -5px;
-    }
-}
+
 
 .contacts{
     display: flex;
