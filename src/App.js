@@ -11,7 +11,7 @@ import { arbitrum, mainnet } from 'viem/chains'
 
 //more about libriry https://docs.walletconnect.com/web3modal/react/about?platform=wagmi1
 // 1. Get projectId at https://cloud.walletconnect.com
-const projectId = '4bf35fbc963cd2af20592850dd871cb7'
+const projectId = process.env.PUBLIC_PROJECT_ID
 
 
 const metadata = {
