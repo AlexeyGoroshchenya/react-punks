@@ -132,6 +132,10 @@
     }
 }
 
+.connected .button{
+    padding: 1rem 4rem 1rem 4rem;
+}
+
 .button_1{
     background: linear-gradient(91.67deg, #6B4141 2.86%, var(--coral) 99.97%);
 }
@@ -174,3 +178,8 @@
     -ms-transform: translateY(-4px);
     -o-transform: translateY(-4px);
 }
+
+.connected .button p::before{
+    content: none;
+}
+
