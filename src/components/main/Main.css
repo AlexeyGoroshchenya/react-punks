@@ -458,7 +458,7 @@
 .notice {
     margin: 0 auto;
     text-align: center;
-    width: 80%;
+    width: 45%;
     color: #C4C4C4;
     font-size: 1rem;
     line-height: 1.5;
@@ -467,7 +467,15 @@
 
 @media (max-width: 991.98px) {
     .notice {
+        width: 55%;
         padding-bottom: 15px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .notice {
+        width: 75%;
+
     }
 }
 

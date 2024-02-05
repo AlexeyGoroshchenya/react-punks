@@ -54,7 +54,7 @@ const Main = () => {
             setActivity(true)
             activate()
             clearTimeout(timer_2Ref.current)
-        }, 2000)
+        }, parseFloat(process.env.PUBLIC_INTERFERENCE_DURATION))
 
 
     }, [])
@@ -63,7 +63,7 @@ const Main = () => {
         timer_1Ref.current = setTimeout(() => {
             setIdleStage(2)
             clearTimeout(timer_1Ref.current)
-        }, 2000 + 2000 * Math.random())
+        }, parseFloat(process.env.PUBLIC_INTERFERENCE_DURATION) + 2000 * Math.random())
     }, [])
 
     const onIdle = () => {
@@ -101,16 +101,9 @@ const Main = () => {
 
             <Header stage={stage} />
 
-            <div className={stage === 1 ? 'coral arrow go-prev-slide' : stage === 2 ? 'green arrow go-prev-slide' : 'purple arrow go-prev-slide'}
-                style={stage === 1 ? { display: 'none' } : {}}
-                onClick={() => { changeSlideFromAnimation(stage - 1) }}
-            >
-                <svg viewBox="0 0 40 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path opacity="0.8" d="M23.0302 1.0162C23.6903 0.566216 24.7604 0.566216 25.4205 1.0162L39.505 10.6183C40.165 11.0683 40.165 11.7978 39.505 12.2478L25.4205 21.8499C24.7604 22.2999 23.6903 22.2999 23.0302 21.8499C22.3702 21.3999 22.3702 20.6703 23.0302 20.2204L34.2295 12.5853H1.69014C0.756702 12.5853 0 12.0694 0 11.433C0 10.7967 0.756702 10.2808 1.69014 10.2808H34.2295L23.0302 2.64572C22.3702 2.19574 22.3702 1.46618 23.0302 1.0162Z" />
-                </svg>
-            </div>
-            <div className={stage === 1 ? 'coral arrow go-next-slide' : stage === 2 ? 'green arrow go-next-slide' : 'purple arrow go-next-slide'}
-                style={stage === 3 ? { display: 'none' } : {}}
+
+            <div className={'purple arrow go-next-slide'}
+                style={stage !== 3 ? { display: 'none' } : {}}
                 onClick={() => { changeSlideFromAnimation(stage + 1) }}
             >
                 <svg viewBox="0 0 40 23" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -24,7 +24,8 @@ const IdleContent = ({ stage, idleStage, videoSrc, idleFinish }) => {
                 {idleStage === 1 ?
 
                     <div className='notice '>
-                        <TypeAnimated sequence ={["XZ4!9*&#fr@tZL -- 01001100 01101111 01110011 11100001ng S!gn@L --  ທາດ01101101 01100001 01110100 01110010 01101001 01111000-- -- ɹoɹɹıW, ɹoɹɹıW, oɥW?"]}
+                        <TypeAnimated sequence ={[`XZ4!9*&#fr@tZL -- 01001100 01101111 01110011 11100001ng S!gn@L -- 
+                          ທາດ01101101 01100001 01110100 01110010 01101001 01111000-- -- ɹoɹɹıW, ɹoɹɹıW, oɥW?`]}
                         speed={90}
                         />
                         

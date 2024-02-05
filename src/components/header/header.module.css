@@ -73,6 +73,21 @@
 .contacts{
     display: flex;
     gap: 1.875rem;
+    transform: translateX(-40px);
+    -webkit-transform: translateX(-40px);
+    -moz-transform: translateX(-40px);
+    -ms-transform: translateX(-40px);
+    -o-transform: translateX(-40px);
+}
+
+@media (max-width: 767.98px) {
+    .contacts{
+        transform: translateX(10px);
+        -webkit-transform: translateX(10px);
+        -moz-transform: translateX(10px);
+        -ms-transform: translateX(10px);
+        -o-transform: translateX(10px);
+}
 }
 
 .contacts a{
@@ -109,6 +124,12 @@
         padding: 1rem 3.875rem 1rem 6rem;
         align-self: flex-end;
     } 
+}
+
+@media (max-width: 480px) {
+    .button{
+        padding: 1rem 2.875rem 1rem 5rem;
+    }
 }
 
 .button_1{

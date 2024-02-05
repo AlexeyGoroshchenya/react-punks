@@ -10,7 +10,7 @@ const TypeAnimated = ({sequence, speed}) => {
       wrapper="span"
       speed={speed}
       style={{display: 'inline-block' }}
-      repeat={3}
+      repeat={10}
       cursor={false}
     />
     );
