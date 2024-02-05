@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import styles from './header.module.css'
 import { useWeb3Modal } from '@web3modal/wagmi/react'
-import { useAccount } from 'wagmi'
+import { useAccount, useBalance } from 'wagmi'
 
 const Header = ({stage}) => {
 
     const { open } = useWeb3Modal()
     const { address, isConnecting, isDisconnected } = useAccount()
+    
+    const { data } = useBalance({
+        address: address,
+    })
+
     const [accountShortName, setAccountShortName] = useState('')
 
 const getAccountShortName = (str)=>{
@@ -37,6 +42,7 @@ const getAccountShortName = (str)=>{
                 className={stage===1?styles.button_1 +' ' + styles.button:stage===2?styles.button_2 +' ' + styles.button: styles.button_3 +' ' + styles.button}>
                     
                     <p >{address? accountShortName: 'connect'}</p>
+                    {address?<p style={{color: '#a3a3a3', textAlign: 'center', marginTop: '3px'}}>{data?.formatted} {data?.symbol}</p>:''} 
                 </div>
             </div>
         </div>
